@@ -14,52 +14,98 @@
       margin: 0;
       padding: 0;
     }
+
+    /* Navigation bar */
+    .navbar {
+      background-color: #004080;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
       background: white;
     }
-    .logo {
+
+    .main-logo {
       display: block;
       max-width: 120px;
-      margin: 0 auto 30px auto;
+      margin: 30px auto;
     }
+
     h1, h2 {
       text-align: center;
       margin-top: 40px;
       margin-bottom: 20px;
     }
+
     p, ul {
       margin-bottom: 24px;
     }
+
     ul {
       padding-left: 20px;
     }
+
     li {
       margin-bottom: 10px;
     }
-    /* Footer with Privacy link */
+
     footer {
       text-align: center;
-      margin: 40px 0;
       font-size: 14px;
       color: #555;
+      margin: 40px 0;
     }
+
     footer a {
       color: #004080;
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="CamATX Logo" class="logo" />
 
-    <h1>CamATX</h1>
+  <!-- ✅ Top Nav Bar -->
+  <div class="navbar">
+    <a href="index.html" class="logo">CamATX</a>
+    <div>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+
+  <!-- ✅ Page Content -->
+  <div class="container">
+    <img src="logo.png" alt="CamATX Logo" class="main-logo" />
+
+    <h1>Welcome to CamATX</h1>
 
     <p><strong>Experience Austin’s Traffic Like Never Before</strong> with CamATX — Live CCTV and AI-Powered Traffic Insights.</p>
 
@@ -105,7 +151,8 @@
   </div>
 
   <footer>
-    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    &copy; 2025 CamATX | Built with ❤️ in Austin
   </footer>
+
 </body>
 </html>
