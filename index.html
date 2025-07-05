@@ -3,51 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CamATX - About the App</title>
+  <title>CamATX</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: white;
+    }
+
+    .logo {
+      display: block;
+      max-width: 120px;
+      margin: 0 auto 30px auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    p, ul {
+      margin-bottom: 24px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>About CamATX</h1>
+    <!-- ✅ App logo goes here -->
+    <img src="logo.png" alt="CamATX Logo" class="logo" />
+
+    <h1>CamATX</h1>
 
     <p><strong>Experience Austin’s Traffic Like Never Before</strong> with CamATX — Live CCTV and AI-Powered Traffic Insights.</p>
 
-    <p>CamATX offers real-time live CCTV images from the City of Austin’s official Open Data portal, combined with powerful AI-driven traffic analytics to help you make smarter, faster travel decisions. Whether you're commuting, driving rideshare, or exploring the city, CamATX brings Austin’s roads directly to your fingertips — giving you clear, up-to-date views and insights for every journey.</p>
+    <p>CamATX offers real-time live CCTV images from the City of Austin’s official Open Data portal, combined with powerful AI-driven traffic analytics to help you make smarter, faster travel decisions.</p>
 
     <h2>Key Features</h2>
 
     <p><strong>Live CCTV Feeds Across Austin:</strong><br>
-    Stream high-quality live video from traffic cameras at major intersections across the city. Monitor current road conditions, accidents, closures, or construction in real time. CamATX provides direct access to Austin’s extensive public camera network, covering the city’s traffic landscape comprehensively.</p>
+    Stream high-quality live video from traffic cameras at major intersections across the city. Monitor current road conditions, accidents, closures, or construction in real time.</p>
 
     <p><strong>AI-Generated Congestion Pattern Analysis:</strong><br>
-    We collected 24 hours of camera images from one typical weekday and one typical weekend day, then used OpenCV to locally analyze traffic flow and congestion trends. Tap any camera marker on the interactive map under the AI-Analytics screen to view AI-generated graphs comparing typical weekday and weekend traffic patterns for that location.</p>
+    We collected 24 hours of camera images from one weekday and one weekend, then used OpenCV to locally analyze congestion trends. View AI-generated traffic graphs when you tap a camera marker in the app.</p>
 
     <p><strong>Intuitive Map Interface:</strong><br>
-    CamATX’s user-friendly map shows all traffic cameras as interactive markers with live thumbnail previews. Quickly locate cameras near your route or destination. Use the address search bar at the top of the screen to quickly navigate to a specific region within Austin. Switch between live feeds and congestion graphs seamlessly.</p>
+    Interactive camera markers with live previews, map search, and seamless toggling between feeds and congestion insights.</p>
 
     <p><strong>Reliable Open Data Source:</strong><br>
-    All live CCTV images come directly from the City of Austin’s official Open Data portal, ensuring authentic, accurate, and timely feeds without delays or third-party interference.</p>
+    Powered by the City of Austin’s official Open Data portal for accuracy and real-time reliability.</p>
 
     <h2>Why Choose CamATX?</h2>
 
     <ul>
-      <li>🔴 Beat traffic with real-time street-level views</li>
-      <li>📊 Make smarter decisions using AI-generated congestion graphs</li>
-      <li>⏱ Save time and reduce travel stress</li>
-      <li>💡 Support Austin’s smart city open data initiative</li>
-      <li>🚗 Great for commuters, rideshare drivers, tourists, and city planners</li>
+      <li>🔴 Real-time street-level traffic views</li>
+      <li>📊 AI-powered congestion graphs</li>
+      <li>⏱ Avoid surprises and save time</li>
+      <li>💡 Backed by open government data</li>
+      <li>🚗 Built for commuters, drivers, tourists, and planners</li>
     </ul>
 
     <h2>How It Works</h2>
 
     <ul>
-      <li>Streams live video feeds from Austin’s CCTV camera network</li>
-      <li>Displays AI-generated congestion comparison graphs per camera</li>
-      <li>Interactive map lets you explore current and historic traffic trends</li>
+      <li>Streams live CCTV feeds from Austin's traffic camera network</li>
+      <li>Uses OpenCV to compare weekday vs. weekend congestion</li>
+      <li>Interactive map interface with live and historical data</li>
     </ul>
 
     <h2>Developer Info</h2>
     <p>CamATX was developed by Akhil Kakarla, a student from Austin passionate about smart cities and AI.</p>
+
+
+    <h2>Questions or Feedback</h2>
+    <p>Please send an email to camatx@gmail.com if you have any questions or feedback. Thank you for downloading CamATX!</p>
   </div>
 </body>
 </html>
