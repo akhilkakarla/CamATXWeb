@@ -45,11 +45,42 @@
     li {
       margin-bottom: 10px;
     }
+
+    /* Navigation tabs */
+    .nav {
+      background: #004080;
+      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      margin: 0 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .nav button:hover, .nav button.active {
+      border-bottom: 3px solid #ff3b30;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- ✅ App logo goes here -->
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button id="homeTab" class="active" onclick="showPage('home')">Home</button>
+    <button id="privacyTab" onclick="showPage('privacy')">Privacy Policy</button>
+  </div>
+
+  <!-- Home Content -->
+  <div class="container" id="homePage">
     <img src="logo.png" alt="CamATX Logo" class="logo" />
 
     <h1>CamATX</h1>
@@ -93,9 +124,61 @@
     <h2>Developer Info</h2>
     <p>CamATX was developed by Akhil Kakarla, a student from Austin passionate about smart cities and AI.</p>
 
-
     <h2>Questions or Feedback</h2>
     <p>Please send an email to info.camatx@gmail.com if you have any questions or feedback. Thank you for downloading CamATX!</p>
   </div>
+
+  <!-- Privacy Policy Content -->
+  <div class="container" id="privacyPage" style="display:none;">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: July 2025</p>
+
+    <p>CamATX ("we", "our", or "us") respects your privacy and is committed to protecting it through this Privacy Policy.</p>
+
+    <h2>Information We Collect</h2>
+    <p>CamATX does not collect, store, or share any personal information from users. The app only accesses publicly available live CCTV traffic data from the City of Austin’s Open Data portal.</p>
+
+    <h2>How We Use Information</h2>
+    <p>Since no personal data is collected, CamATX does not use personal information for any purposes.</p>
+
+    <h2>Use of Open Source Frameworks</h2>
+    <p>CamATX uses the open source computer vision library <strong>OpenCV</strong> to locally analyze traffic images and generate congestion pattern graphs. OpenCV is licensed under the Apache 2.0 License. No personal user data is shared with or transmitted to OpenCV or any third party.</p>
+
+    <h2>Data Security</h2>
+    <p>We take reasonable measures to protect any data accessed and ensure the app functions securely and reliably.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>The app uses data from the City of Austin’s official Open Data portal, which is subject to their terms and policies.</p>
+
+    <h2>Children’s Privacy</h2>
+    <p>CamATX is suitable for all ages and does not knowingly collect personal information from children under 13.</p>
+
+    <h2>Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We encourage users to review this page periodically for any changes.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at info.camatx@gmail.com.</p>
+  </div>
+
+  <script>
+    function showPage(page) {
+      const homePage = document.getElementById('homePage');
+      const privacyPage = document.getElementById('privacyPage');
+      const homeTab = document.getElementById('homeTab');
+      const privacyTab = document.getElementById('privacyTab');
+
+      if (page === 'home') {
+        homePage.style.display = 'block';
+        privacyPage.style.display = 'none';
+        homeTab.classList.add('active');
+        privacyTab.classList.remove('active');
+      } else if (page === 'privacy') {
+        homePage.style.display = 'none';
+        privacyPage.style.display = 'block';
+        homeTab.classList.remove('active');
+        privacyTab.classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>
