@@ -490,9 +490,17 @@
       color: #ffff;
       text-decoration: bold;
       font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
       position: relative;
-      bottom: 20px;
-      left: 20px;
+      bottom: 40px;
+      left: 50px;
+    }
+
+    .bottomBar-tagline-title{
+      color: #ffff;
+      text-decoration: bold;
+      font-size: 40px;
+      font-family:Arial, Helvetica, sans-serif;
     }
 
     .privacy-policy{
