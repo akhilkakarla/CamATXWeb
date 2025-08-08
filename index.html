@@ -248,6 +248,16 @@
       position: relative;
       top: 418px;
       left: 1085px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     .download-button:hover{
@@ -255,6 +265,10 @@
       padding: 20px 70px;
       border: none;
       border-radius: 15px;
+    }
+
+    .download-button svg{
+      flex-shrink: 0;
     }
 
     .tagline1{
@@ -644,12 +658,6 @@
       bottom: 300px;
     }
 
-    .apple-image{
-      color: #ffff;
-      text-decoration: none;
-      padding: 10px 10px;
-    }
-
     .preview-text{
       color: #ffff;
     }
@@ -817,7 +825,10 @@
     </div>
     
     <div>
-        <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="download-button"><img src="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-5fcc-61f7-9145-74b2bc7a78a7/raw?se=2025-08-08T23%3A55%3A29Z&sp=r&sv=2024-08-04&sr=b&scid=f57d9e99-a9bd-5086-b84b-8120caa3cf46&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-08T12%3A54%3A17Z&ske=2025-08-09T12%3A54%3A17Z&sks=b&skv=2024-08-04&sig=gat0PqEB2s8pg9k6%2BNF2tltp9q89qtTHComFAJ2yfao%3D" class="apple-image">App Store</a>
+        <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="download-button"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24">
+    <path d="M16.365 1.43c-.9.053-1.965.616-2.598 1.36-.568.673-1.058 1.733-.87 2.732 1.002.078 2.047-.514 2.685-1.271.62-.743 1.074-1.78.783-2.821zM19.5 6.5c-1.087 0-2.12.633-2.772 1.28-.618.616-1.16 1.57-1.017 2.571 1.118.087 2.277-.578 2.987-1.366.687-.759 1.193-1.836.802-2.905zm-2.804 5.926c-.574-.732-1.302-1.152-2.057-1.166-.758-.014-1.4.447-2.064.447-.67 0-1.334-.46-2.064-.447-.746.014-1.49.442-2.064 1.166-1.327 1.666-1.111 4.805.5 7.098.687.995 1.592 2.113 2.732 2.092 1.12-.02 1.498-.672 2.864-.672 1.368 0 1.706.652 2.866.652 1.14.02 2.012-1.078 2.7-2.073 1.107-1.606 1.568-3.164 1.587-3.25-.034-.014-3.007-1.138-3.997-2.397z"/>
+  </svg>
+  App Store</a>
     </div>
     
 
@@ -843,7 +854,7 @@
     <p class="preview-text">Preview</p>
   </section>
   <!--<div class="bottom-section">-->
-  <section id="preview2">
+  <section id="test">
       <div class="screenshot-row">
         <div class="infinite-gallery" id="gallery">
           <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/d1/75/1ad175a4-2085-407a-6db7-60feb1fbb21b/iphone16promax-homescreen.png/0x0ss.png" class="screenshot" alt="Screenshot 1"/>
