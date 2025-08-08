@@ -486,7 +486,7 @@
       font-family: Arial, Helvetica, sans-serif;
       position: relative;
       bottom: 60px;
-      left: 120px;
+      left: 220px;
     }
 
     .bottomBar-tagline-title{
@@ -498,6 +498,8 @@
 
     .useful-links{
       color: #ffff;
+      position: relative;
+      bottom: 30px;
     }
 
     .useful-links-title{
@@ -506,15 +508,15 @@
       font-size: 25px;
       font-family: Arial, Helvetica, sans-serif;
       position: relative;
-      left: 350px;
+      left: 600px;
       bottom: 40px;
     }
 
     .privacy-policy{
       color: #ffff;
-      font-size: 15px;
+      font-size: 10px;
       position: relative;
-      left: 600px;
+      left: 650px;
       bottom: 50px;
       text-decoration: none;
       white-space: nowrap;
@@ -523,7 +525,7 @@
 
     .faq{
       color: #ffff;
-      font-size: 15px;
+      font-size: 10px;
       position: relative;
       left: 600px;
       bottom: 70px;
@@ -534,9 +536,9 @@
 
     .app-download{
       color: #ffff;
-      font-size: 15px;
+      font-size: 10px;
       position: relative;
-      left: 600px;
+      left: 550px;
       bottom: 30px;
       text-decoration: none;
       white-space: nowrap;
