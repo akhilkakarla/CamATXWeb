@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CamATX</title>
-  <link rel="stylesheet" href="style.css" />
+<head>  
+  </div>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="camatx-icon" href="logo.png" type="image/png">
+  <title class="title">CamATX</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background-color: #f9f9f9;
+      background-color: #FFFFFF;
       color: #333;
       margin: 0;
       padding: 0;
+      padding-top: 20px;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .title{
+      font-size: 25px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      text-indent: 12em;
+      padding-left: 300px;
+      padding-top: 450px;
     }
 
     /* Navigation bar */
     .navbar {
-      background-color: #004080;
+      background-color: #3E1E68;
       padding: 15px 20px;
-      color: white;
+      color: #ffff;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
     .navbar .logo {
-      font-size: 22px;
+      font-size: 44px;
       font-weight: bold;
-      color: white;
-      text-decoration: none;
+      color: black;
+      text-decoration: bold;
+      text-align: left;
     }
 
     .navbar a {
-      color: white;
+      color: #ffff;
       text-decoration: none;
       margin-left: 20px;
       font-size: 16px;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
     }
 
     .container {
@@ -48,12 +63,33 @@
       margin: 0 auto;
       padding: 40px 20px;
       background: white;
+      display: flex;
+      justify-content: center; /* horizontally center */
+      align-items: center; 
+    }
+
+    .full-width {
+      width: 3456px;          
+      padding: 5vw;             
+      box-sizing: border-box;
     }
 
     .main-logo {
       display: block;
-      max-width: 120px;
-      margin: 30px auto;
+      max-width: 110px;
+      border-radius: 20px;
+      margin-left: 180px;
+      margin-top: 25px;
+    }
+
+    h1 {
+      font-size: 100px; 
+      margin-left: 170px;
+      margin-top: 100px;
+    }
+
+    p {
+      font-size: 1.2em; 
     }
 
     h1, h2 {
@@ -77,82 +113,818 @@
     footer {
       text-align: center;
       font-size: 14px;
-      color: #555;
+      color: white;
       margin: 40px 0;
     }
 
     footer a {
-      color: #004080;
+      color: white;
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
+
+    .features-tab{
+      color: #FFFFFF;
+      text-align: right;
+      margin-right: 100px;
+    }
+
+    .privacy-policy-tab{
+      background-color: #3E1E68;
+      color: white;
+      text-align: right;
+      margin-left: auto;
+      /*margin-right: 100px;*/
+    }
+
+    html, body {
+      max-height: 3700px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: none;
+    }
+
+    .screenshot-row {
+      overflow-x: hidden;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      width: 100%;
+      background-color: #3E1E68;
+      color: #FFFF;
+      display: flex;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      width: 100vw;
+      padding: 60px 60px;
+      transform: translateX(-87px);
+      margin-top: 50px;
+      position: relative;
+      top: -1050px;
+      /*transform: translateY(-100px);*/
+    }
+
+    .screenshot {
+      flex-shrink: 0;
+      width: 80vw;      
+      max-width: 200px; 
+      height: auto;
+      scroll-snap-align: start;
+      border-radius: 30px;
+      vertical-align: middle;
+    }
+
+    .title-screenshot1{
+      flex-shrink: 0;
+      width: 90vw;      
+      max-width: 270px; 
+      height: auto;
+      scroll-snap-align: start;
+      border-radius: 50px;
+      margin-left: 420px;
+      position: relative;
+      top: -38px;
+      border: 10px solid black;
+    }
+
+    .title-screenshot2{
+      flex-shrink: 0;
+      width: 90vw;      
+      max-width: 270px; 
+      height: auto;
+      scroll-snap-align: start;
+      border-radius: 50px;
+      margin-left: 90px;
+      border: 10px solid black;
+      position: relative;
+      top: -645px;
+    }
+
+    .title-screenshot3{
+      flex-shrink: 0;
+    }
+
+    .camatx-title{
+      color: #3E1E68;
+      background-color: #FFFF;
+      font-size: 50px;
+      font-weight: bold;
+      margin-left: 310px;
+      /*margin-top: -91px;*/
+      position: relative;
+      top: -100px;
+      text-decoration: none;
+    }
+
+    .contents{
+      position: relative;
+      top: 200px;
+      margin-top: 100px;
+    }
+
+    .tagline{
+      position: relative;
+      top: -400px;
+      left: 400px;
+    }
+
+    .download-button{
+      display: inline-block;
+      padding: 20px 70px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 35px;
+      color: #fff;
+      background-color: #3E1E68;
+      border: none;
+      border-radius: 15px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      top: 418px;
+      left: 1085px;
+    }
+
+    .download-button:hover{
+      background-color: black;
+      padding: 20px 70px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .tagline1{
+      color: black;
+      font-size: 55px;
+      position: relative;
+      top: -1347px;
+      left: 885px;
+      text-decoration: bold;
+    }
+
+    .tagline2{
+      color: black;
+      font-size: 20px;
+      position: relative;
+      top: -1347px;
+      left: 885px;
+    }
+
+    /*
+    .scroll-content {
+      display: inline-flex;
+    }
+    */
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .features-title{
+      display: inline-block;
+      color: #FFFF;
+      background-color: #3E1E68;
+      font-family: 'Poppins', sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 10px 20px;
+      position: relative;
+      top: -800px;
+      margin-left: 203px;
+    }
+
+    .camera{
+      position:relative;
+      top: -600px;
+      left: 200px;
+    }
+
+    .camera-icon{
+      display: inline-block;
+      color: #FFFF;
+      background-color: #3E1E68;
+      border-radius: 8px;
+      padding: 20px;
+      width: auto;
+      margin: 20px;
+    }
+
+    .ai{
+      position:relative;
+      top: -785px;
+      left: 740px;
+    }
+
+    .ai-icon{
+      display: inline-block;
+      color: #FFFF;
+      background-color: #3E1E68;
+      border-radius: 8px;
+      padding: 20px;
+      width: auto;
+      margin: 20px;
+    }
+
+    .download-banner{
+      color: #FFFF;
+      background-color: #3E1E68;
+      border-radius: 16px;
+      margin: 600px;
+      padding: 300px 600px;
+      position: relative;
+      bottom: 400px;
+      right: 475px;
+    }
+
+    .tagline-banner{
+      color: #FFFF;
+      font-size: 45px;
+      position: relative;
+      left: 180px;
+      bottom: 1150px;
+    }
+
+    .banner-image{
+      flex-shrink: 0;
+      width: 80vw;      
+      max-width: 200px; 
+      height: auto;
+      scroll-snap-align: start;
+      border-radius: 30px;
+      position: relative;
+      bottom: 700px;
+      left: 1090px;
+    }
+
+    .tagline-download-button{
+      display: inline-block;
+      background-color: #FFFF;
+      padding: 10px 20px;
+      border-radius: 20px;
+      position: relative;
+      bottom: 1050px;
+      left: 220px;
+      cursor: pointer;
+      white-space: nowrap;
+      width: auto; 
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .tagline-download-button:hover{
+      box-shadow: 0 10px 20px black;
+    }
+
+    .ad{
+      color: black;
+      font-size: 45px;
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      bottom: 697px;
+      left: 210px;
+    }
+
+    .centered-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;    /* horizontally center */
+      justify-content: center; /* vertically center if needed */
+      text-align: center;     /* optional: center text */
+      padding: 20px;
+    }
+
+    .title-elements{
+      background-color: #FFFF;
+      position: relative;
+      top: 60px;
+    }
+
+    .search{
+      position: relative;
+      bottom: 970px;
+      left: 1300px;
+    }
+
+    .search-icon{
+      display: inline-block;
+      color: #FFFF;
+      background-color: #3E1E68;
+      border-radius: 8px;
+      padding: 20px;
+      width: auto;
+      margin: 20px;
+    }
+
+    .infinite-gallery {
+      display: flex;
+      gap: 10px;
+      animation: scrollGallery 25s linear infinite;
+    }
+
+    .useful-links{
+      color: white;
+      background-color: black;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .navbar-home-tab{
+      color: #ffff;
+      font-size: 20px;
+      position: relative;
+      left: 120px;
+    }
+
+    .navbar-features-tab{
+      color: #ffff;
+      font-size: 20px;
+      position: relative;
+      left: 133px;
+    }
+
+    .navbar-preview-tab{
+      color: #ffff;
+      font-size: 20px;
+      position: relative;
+      left: 130px;
+    }
+
+    .support{
+      width: 100%;
+      color: #ffff;
+      background-color: #3E1E68;
+      position: relative;
+      bottom: 100px;
+      padding: 5px 50px;
+      text-decoration: none;
+    }
+
+    .support-text{
+      color: #ffff;
+      text-decoration: none;
+      position: relative;
+      left: 700px;
+    }
+
+    .bottomBar{
+      width: 100%;
+      background-color: black;
+      padding: 70px 50px;
+      color: white;
+      display: flex;
+      margin-bottom: 200px;
+    }
+
+    .bottomBar a{
+      color: #ffff;
+      text-decoration: none;
+      font-size: 20px;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .privacy-policy{
+      color: #ffff;
+      background-color: black;
+      font-size: 15px;
+      position: relative;
+      left: 550px;
+      bottom: 70px;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .faq{
+      color: #ffff;
+      background-color: black;
+      font-size: 15px;
+      position: relative;
+      left: 500px;
+      bottom: 40px;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .app-download{
+      color: #ffff;
+      background-color: black;
+      font-size: 15px;
+      position: relative;
+      left: 450px;
+      bottom: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .footer{
+      color: #ffff;
+      background-color: black;
+      font-size: 10px;
+      position: relative;
+      right: 900px;
+      bottom: 20px;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .display-row {
+      display: flex;
+      gap: 0; /* Or a small value */
+    }
+
+    .developer-info{
+      color: black;
+      background-color: #ffff;
+      margin-bottom: 200px;
+    }
+
+    .support-section{
+      background-color: #ffff;
+      margin-bottom: 150px;
+    }
+
+    .center-element{
+      width: 100%;
+      display: flex;
+      justify-content: center; /* Horizontal centering */
+      align-items: center; 
+    }
+
+    .centered {
+      width: 1900px;
+      margin-left: 85px;
+      border-radius: 30px;
+      /*margin-bottom: 100px;*/
+      padding-bottom: 50px;
+    }
+
+    .why{
+      width: 100%;
+      color: black;
+      background-color: #ffff;
+      font-size: 20px;
+      font-family:Arial, Helvetica, sans-serif;
+      margin-bottom: 260px;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+
+    .how{
+      color: black;
+      background-color: #ffff;
+      font-size: 20px;
+      font-family:Arial, Helvetica, sans-serif;
+      margin-bottom: 200px;
+    }
+
+    .bullets{
+      color: black;
+      background-color: #ffff;
+      margin-left: 35%;
+    }
+
+    .space-manager{
+      color: #ffff;
+      background-color: #ffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .other-section{
+      margin-bottom: -30px;
+    }
+
+    @keyframes scrollGallery {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .scroll-wrapper{
+      overflow-x: hidden;
+    }
+
+    h2 {
+      margin-top: 0; /* remove space above heading */
+    }
+
+
+    @media screen and (max-width: 1080px){
+      .scroll-wrapper{
+          overflow-x: scroll;
+      }
+    }
+
+    #home{
+      background-color: #FFFF;
+    }
+
+    #preview{
+      background-color: #FFFF;
+    }
+
+    #features{
+      background-color: #FFFF;
+    }
+
   </style>
+  <!--
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsRNoUzwgRpVBt4QWvKVmnwTZM6qyMrVU"></script>
+      <script>
+      function initMap() {
+        const center = { lat: 30.2672, lng: -97.7431 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 13,
+          center,
+        });
+        new google.maps.Marker({
+          position: center,
+          map,
+          title: "Austin Center",
+        });
+      }
+
+      window.onload = initMap;
+    </script>
+  -->
+
+  <!--
+    <script>
+      const container = document.getElementById('screenshot-row');
+      const content = container.querySelector('.scroll-content');
+      const originalImages = Array.from(content.children);
+
+      // 1. Clone each original image and append it to create the illusion of looping
+      originalImages.forEach(img => {
+        const clone = img.cloneNode(true);
+        content.appendChild(clone);
+      });
+
+      // 2. Reset scroll when reaching halfway
+      container.addEventListener('scroll', () => {
+        if (container.scrollLeft >= content.scrollWidth / 2) {
+          container.scrollLeft = 0;
+        }
+      });
+    </script>
+-->
+
+    <!--
+    <script>
+      const gallery = document.querySelector('.screenshot-row');
+      let scrollInterval = setInterval(() => {
+        if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
+          gallery.scrollLeft = 0;
+        } else {
+          gallery.scrollLeft += 1;
+        }
+      }, 20); // adjust speed as needed
+    </script>
+-->
+
+
+    <script>
+      const row = document.querySelector('.screenshot-row');
+      let scrollSpeed = 1; // pixels per tick
+
+      function autoScroll() {
+        row.scrollLeft += scrollSpeed;
+        
+        if (row.scrollLeft >= row.scrollWidth - row.clientWidth) {
+          row.scrollLeft = 0; // Reset to beginning
+        }
+
+        requestAnimationFrame(autoScroll); // smooth looping
+      }
+
+      autoScroll();
+    </script>
+
+
+    <script>
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+    </script>
+
+    <script>
+      const galleryWrapper = document.querySelector('.screenshot-row');
+
+      // Disable wheel scrolling
+      galleryWrapper.addEventListener('wheel', (e) => {
+        e.preventDefault();
+      }, { passive: false });
+
+      // Disable touch scrolling
+      galleryWrapper.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+      }, { passive: false });
+    </script>
+    
+    <script>
+        document.querySelectorAll('*').forEach(el => {
+        el.style.margin = '0';
+        el.style.padding = '0';
+      });
+    </script>
+
 </head>
+
 <body>
-
-  <!-- ✅ Top Nav Bar -->
+<div class="scroll-wrapper">
   <div class="navbar">
-    <a href="index.html" class="logo">CamATX</a>
-    <div>
-      <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="#home" class="navbar-home-tab">Home</a>
+    <a href="#preview" class="navbar-preview-tab">Features</a>
+    <a href="#features" class="navbar-features-tab">Preview</a>
+  </div>
+
+<!--<div class="centered-content">-->
+  <section id="home">
+    <div class="title-elements">
+      <a href="index.html">
+        <img src="logo.png" alt="CamATX Logo" class="main-logo">
+      </a>
+      <a class="camatx-title" href="index.html">CamATX</a>
     </div>
-  </div>
+    
+    <div>
+        <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="download-button"> App Store</a>
+    </div>
+    
 
-  <!-- ✅ Page Content -->
-  <div class="container">
-    <img src="logo.png" alt="CamATX Logo" class="main-logo" />
+    <div class="full-width">
+      <div>
+        <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/03/c4/69/03c469f8-f058-4f64-e0df-b583b67638dd/iphone16promax-screen4.png/0x0ss.png" class="title-screenshot1" alt="Screenshot 1"/>
+        <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/8c/d2/b58cd2ef-4a90-7504-5d5e-f1f43e1e1430/iphone16promax-screen3.png/0x0ss.png" class="title-screenshot2" alt="Screenshot 2"/>
+      </div>
 
-    <h1>Welcome to CamATX</h1>
+      <div class="tagline1">
+        <p><strong>Experience<br></strong>
+          <strong>Austin's Traffic</strong>
+        </p>
+      </div>
 
-    <p><strong>Experience Austin’s Traffic Like Never Before</strong> with CamATX — Live CCTV and AI-Powered Traffic Insights.</p>
+      <div class="tagline2">
+        <p><strong>Live CCTV Images and AI-Powered Traffic Insights</strong></p>  
+      </div>
 
-    <p>CamATX offers real-time live CCTV images from the City of Austin’s official Open Data portal, combined with powerful AI-driven traffic analytics to help you make smarter, faster travel decisions.</p>
+  </section>
 
-    <h2>Key Features</h2>
+  <!--<div class="bottom-section">-->
+  <section id="preview">
+      <div class="screenshot-row">
+        <div class="infinite-gallery" id="gallery">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/d1/75/1ad175a4-2085-407a-6db7-60feb1fbb21b/iphone16promax-homescreen.png/0x0ss.png" class="screenshot" alt="Screenshot 1"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fa/4c/6f/fa4c6fb3-eb48-f2ee-f1f0-b3f2f5a6ad14/iphone16promax-screen1.png/0x0ss.png" class="screenshot" alt="Screenshot 2"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/db/e3/dedbe3b2-b764-7d79-fe78-b0d7e2be508a/iphone16promax-screen2.png/0x0ss.png" class="screenshot" alt="Screenshot 3"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/8c/d2/b58cd2ef-4a90-7504-5d5e-f1f43e1e1430/iphone16promax-screen3.png/0x0ss.png" class="screenshot" alt="Screenshot 4"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/03/c4/69/03c469f8-f058-4f64-e0df-b583b67638dd/iphone16promax-screen4.png/0x0ss.png" class="screenshot" alt="Screenshot 5"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5c/dc/2a/5cdc2aad-1826-bf84-88df-008a2bc4341d/iphone16promax-screen5.png/0x0ss.png" class="screenshot" alt="Screenshot 6"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/c7/c3/dfc7c364-bc26-be06-48b1-f3733e6b01ad/IMG_3109.PNG/0x0ss.png" class="screenshot" alt="Screenshot 7"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/65/22/c8652200-6ba5-63d9-0221-e500850c0bf2/IMG_3112.PNG/0x0ss.png" class="screenshot" alt="Screenshot 8">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/6e/79/aa6e79cd-b7c4-3187-4ea5-bc75ef903faf/IMG_3111.PNG/0x0ss.png" class="screenshot" alt="Screenshot 9">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/06/4e/1d064e3f-f4a3-9a4f-00da-9d6a665c2432/IMG_3114.PNG/0x0ss.png" class="screenshot" alt="Screenshot 10">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/a2/4e/b3a24ecf-8393-7c57-5ced-f339b6aa1cfd/IMG_3113.PNG/0x0ss.png" class="screenshot" alt="Screenshot 11">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/05/89/bf05894c-7b22-86f2-c223-a8317f83ee0b/IMG_3110.PNG/0x0ss.png" class="screenshot" alt="Screenshot 12">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/d1/75/1ad175a4-2085-407a-6db7-60feb1fbb21b/iphone16promax-homescreen.png/0x0ss.png" class="screenshot" alt="Screenshot 1 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fa/4c/6f/fa4c6fb3-eb48-f2ee-f1f0-b3f2f5a6ad14/iphone16promax-screen1.png/0x0ss.png" class="screenshot" alt="Screenshot 2 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/db/e3/dedbe3b2-b764-7d79-fe78-b0d7e2be508a/iphone16promax-screen2.png/0x0ss.png" class="screenshot" alt="Screenshot 3 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/8c/d2/b58cd2ef-4a90-7504-5d5e-f1f43e1e1430/iphone16promax-screen3.png/0x0ss.png" class="screenshot" alt="Screenshot 4 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/03/c4/69/03c469f8-f058-4f64-e0df-b583b67638dd/iphone16promax-screen4.png/0x0ss.png" class="screenshot" alt="Screenshot 5 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5c/dc/2a/5cdc2aad-1826-bf84-88df-008a2bc4341d/iphone16promax-screen5.png/0x0ss.png" class="screenshot" alt="Screenshot 6 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/c7/c3/dfc7c364-bc26-be06-48b1-f3733e6b01ad/IMG_3109.PNG/0x0ss.png" class="screenshot" alt="Screenshot 7 copy"/>
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/65/22/c8652200-6ba5-63d9-0221-e500850c0bf2/IMG_3112.PNG/0x0ss.png" class="screenshot" alt="Screenshot 8 copy">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/6e/79/aa6e79cd-b7c4-3187-4ea5-bc75ef903faf/IMG_3111.PNG/0x0ss.png" class="screenshot" alt="Screenshot 9 copy">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/06/4e/1d064e3f-f4a3-9a4f-00da-9d6a665c2432/IMG_3114.PNG/0x0ss.png" class="screenshot" alt="Screenshot 10 copy">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/a2/4e/b3a24ecf-8393-7c57-5ced-f339b6aa1cfd/IMG_3113.PNG/0x0ss.png" class="screenshot" alt="Screenshot 11 copy">
+          <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/05/89/bf05894c-7b22-86f2-c223-a8317f83ee0b/IMG_3110.PNG/0x0ss.png" class="screenshot" alt="Screenshot 12 copy">
+        </div>
+      </div>
+  </section>
 
-    <p><strong>Live CCTV Feeds Across Austin:</strong><br>
-    Stream high-quality live video from traffic cameras at major intersections across the city. Monitor current road conditions, accidents, closures, or construction in real time.</p>
+    <div class="contents">
+      <div class="bottom-section">
+      <section id="features">
+        <div>
+          <p class="features-title">Features</p>
+        </div>
 
-    <p><strong>AI-Generated Congestion Pattern Analysis:</strong><br>
-    We collected 24 hours of camera images from one weekday and one weekend, then used OpenCV to locally analyze congestion trends. View AI-generated traffic graphs when you tap a camera marker in the app.</p>
+        <div>
+          <p class="ad">Everything you get with CamATX</p>
+        </div>
 
-    <p><strong>Intuitive Map Interface:</strong><br>
-    Interactive camera markers with live previews, map search, and seamless toggling between feeds and congestion insights.</p>
+        <div class="camera">
+          <div>
+            <p class="camera-icon">📷</p> 
+          </div>
 
-    <p><strong>Reliable Open Data Source:</strong><br>
-    Powered by the City of Austin’s official Open Data portal for accuracy and real-time reliability.</p>
+          <p><strong>Real Time Traffic Conditions</strong></p>
+        </div>
 
-    <h2>Why Choose CamATX?</h2>
+        <div class="ai">
+          <div>
+            <p class="ai-icon">📊</p> 
+          </div>
 
-    <ul>
-      <li>🔴 Real-time street-level traffic views</li>
-      <li>📊 AI-powered congestion graphs</li>
-      <li>⏱ Avoid surprises and save time</li>
-      <li>💡 Backed by open government data</li>
-      <li>🚗 Built for commuters, drivers, tourists, and planners</li>
-    </ul>
+          <p><strong>AI Traffic Concentration Predictions</strong></p>
+        </div>
 
-    <h2>How It Works</h2>
+        <div class="search">
+          <div>
+            <p class="search-icon">🔍</p>
+          </div>
 
-    <ul>
-      <li>Streams live CCTV feeds from Austin's traffic camera network</li>
-      <li>Uses OpenCV to compare weekday vs. weekend congestion</li>
-      <li>Interactive map interface with live and historical data</li>
-    </ul>
+          <p><strong>Locate any area to see cameras nearby</strong></p>
+        </div>
 
-    <h2>Developer Info</h2>
-    <p>CamATX was developed by Akhil Kakarla, a student from Austin passionate about smart cities and AI.</p>
+      </section>
 
-    <h2>Questions or Feedback</h2>
-    <p>Please send an email to info.camatx@gmail.com if you have any questions or feedback. Thank you for downloading CamATX!</p>
-  </div>
+      <div class="centered">
+        <i class="download-banner"></i>
+        <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fa/4c/6f/fa4c6fb3-eb48-f2ee-f1f0-b3f2f5a6ad14/iphone16promax-screen1.png/0x0ss.png" class="banner-image" alt="Display Image">
+        <p class="tagline-banner"><strong>Get Access To Austin Traffic Insights</strong></p>
+        <div>
+          <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="tagline-download-button">Download Now</a>
+        </div>
+      </div>
+      </div>
 
-  <footer>
-    &copy; 2025 CamATX | Built with ❤️ in Austin
-  </footer>
+      <div class="space-manager">
+        <p>Space</p>
+      </div>
 
+      <div class="other-section">
+      <div class="why">
+        <h2><strong>Why Choose CamATX?</strong></h2>
+        <ul class="bullets">
+          <li><strong>Real-time street-level traffic views</strong></li>
+          <li><strong>AI-powered congestion graphs</strong></li>
+          <li><strong>Avoid surprises and save time</strong></li>
+          <li><strong>Backed by open government data</strong></li>
+          <li><strong>Built for commuters, drivers, tourists, and planners</strong></li>
+        </ul>
+      </div>
+
+      <div class="how">
+        <h2><strong>How It Works</strong></h2>
+        <ul class="bullets">
+          <li><strong>Streams live CCTV feeds from Austin's traffic camera network</strong></li>
+          <li><strong>Uses OpenCV to compare weekday vs. weekend congestion</strong></li>
+          <li><strong>Interactive map interface with live and historical data</strong></li>
+        </ul>
+      </div>
+
+      <div class="support-section">
+      <div class="developer-info">
+        <h2><strong>Developer Info</strong></h2>
+
+        <div style="text-align: center; width: 100%;">
+          <p>CamATX was developed by Akhil Kakarla, a student from Austin passionate about smart cities and AI.</p>
+        </div>
+        
+      </div>
+      </div>
+
+      <div class="center-element">
+        <div class="support">
+          <a class="support-text" href="https://austinsdg.onrender.com/privacy-policy.html#contact"><strong>Any Questions? Contact Support</strong></a>
+        </div>
+        </div>
+      </div>
+    
+      <div class="bottomBar">
+        <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
+        <a href="https://camatx.onrender.com/index.html" class="faq">Frequently Asked Questions</a>
+        <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="app-download">App Download</a>
+        <footer class="footer">
+          &copy; 2025 Akhil Kakarla. All Rights Reserved.
+        </footer>
+      </div>
+    </div>
+</div>
+<!--</div>-->
+<!--</div>-->
+</div>
 </body>
 </html>
