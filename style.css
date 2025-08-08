@@ -633,6 +633,15 @@
       bottom: 300px;
     }
 
+    .apple-image{
+      color: #ffff;
+      text-decoration: none;
+    }
+
+    .preview-text{
+      color: #ffff;
+    }
+
     @keyframes scrollGallery {
       0% {
         transform: translateX(0);

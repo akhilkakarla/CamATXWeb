@@ -644,6 +644,15 @@
       bottom: 300px;
     }
 
+    .apple-image{
+      color: #ffff;
+      text-decoration: none;
+    }
+
+    .preview-text{
+      color: #ffff;
+    }
+
     @keyframes scrollGallery {
       0% {
         transform: translateX(0);
@@ -807,7 +816,7 @@
     </div>
     
     <div>
-        <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="download-button"> App Store</a>
+        <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="download-button"><img src="">App Store</a>
     </div>
     
 
@@ -829,8 +838,11 @@
 
   </section>
 
-  <!--<div class="bottom-section">-->
   <section id="preview">
+    <p class="preview-text">Preview</p>
+  </section>
+  <!--<div class="bottom-section">-->
+  <section id="preview2">
       <div class="screenshot-row">
         <div class="infinite-gallery" id="gallery">
           <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/d1/75/1ad175a4-2085-407a-6db7-60feb1fbb21b/iphone16promax-homescreen.png/0x0ss.png" class="screenshot" alt="Screenshot 1"/>
@@ -926,7 +938,7 @@
         </div>
 
         <div class="how">
-          <h2><strong>How It Works</strong></h2>
+          <h2><strong>How Does CamATX Work?</strong></h2>
           <ul class="bullets">
             <li><strong>Streams live CCTV feeds from Austin's traffic camera network</strong></li>
             <li><strong>Uses OpenCV to compare weekday vs. weekend congestion</strong></li>
