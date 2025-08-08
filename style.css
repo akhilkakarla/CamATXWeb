@@ -486,6 +486,15 @@
       font-family:Arial, Helvetica, sans-serif;
     }
 
+    .bottomBar-tagline{
+      color: #ffff;
+      text-decoration: bold;
+      font-size: 30px;
+      position: relative;
+      bottom: 20px;
+      left: 20px;
+    }
+
     .privacy-policy{
       color: #ffff;
       background-color: black;
