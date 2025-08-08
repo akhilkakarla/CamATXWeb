@@ -498,8 +498,7 @@
 
     .useful-links{
       color: #ffff;
-      position: relative;
-      bottom: 30px;
+      margin-bottom: 50px;
     }
 
     .useful-links-title{
@@ -508,15 +507,15 @@
       font-size: 25px;
       font-family: Arial, Helvetica, sans-serif;
       position: relative;
-      left: 600px;
-      bottom: 40px;
+      left: 750px;
+      bottom: 20px;
     }
 
     .privacy-policy{
       color: #ffff;
       font-size: 10px;
       position: relative;
-      left: 650px;
+      left: 750px;
       bottom: 50px;
       text-decoration: none;
       white-space: nowrap;
@@ -538,7 +537,7 @@
       color: #ffff;
       font-size: 10px;
       position: relative;
-      left: 550px;
+      left: 350px;
       bottom: 30px;
       text-decoration: none;
       white-space: nowrap;
@@ -549,8 +548,8 @@
       color: #ffff;
       font-size: 10px;
       position: relative;
-      right: 820px;
-      bottom: -90px;
+      right: 700px;
+      bottom: -140px;
       text-decoration: none;
       white-space: nowrap;
       overflow: hidden;
