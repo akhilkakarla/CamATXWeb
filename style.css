@@ -498,24 +498,23 @@
 
     .useful-links{
       color: #ffff;
-      margin-bottom: 50px;
     }
 
     .useful-links-title{
       color: #ffff;
       text-decoration: bold;
-      font-size: 25px;
+      font-size: 30px;
       font-family: Arial, Helvetica, sans-serif;
       position: relative;
       left: 750px;
-      bottom: 20px;
+      bottom: 30px;
     }
 
     .privacy-policy{
       color: #ffff;
       font-size: 10px;
       position: relative;
-      left: 750px;
+      left: 735px;
       bottom: 50px;
       text-decoration: none;
       white-space: nowrap;
@@ -526,7 +525,7 @@
       color: #ffff;
       font-size: 10px;
       position: relative;
-      left: 600px;
+      left: 605px;
       bottom: 70px;
       text-decoration: none;
       white-space: nowrap;
@@ -548,7 +547,7 @@
       color: #ffff;
       font-size: 10px;
       position: relative;
-      right: 700px;
+      right: 600px;
       bottom: -140px;
       text-decoration: none;
       white-space: nowrap;
