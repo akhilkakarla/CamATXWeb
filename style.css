@@ -446,6 +446,13 @@
       left: 130px;
     }
 
+    .navbar-faq-tab{
+      color: #ffff;
+      font-size: 20px;
+      position: relative;
+      left: 136px;
+    }
+
     .support{
       width: 100%;
       color: #ffff;
@@ -506,7 +513,7 @@
       font-size: 30px;
       font-family: Arial, Helvetica, sans-serif;
       position: relative;
-      left: 735px;
+      left: 732px;
       bottom: 50px;
     }
 
@@ -547,7 +554,7 @@
       color: #ffff;
       font-size: 10px;
       position: relative;
-      right: 630px;
+      right: 625px;
       bottom: -140px;
       text-decoration: none;
       white-space: nowrap;
@@ -621,6 +628,11 @@
       margin-bottom: -30px;
     }
 
+    .bottom-section{
+      position: relative;
+      bottom: 300px;
+    }
+
     @keyframes scrollGallery {
       0% {
         transform: translateX(0);
@@ -655,4 +667,8 @@
 
     #features{
       background-color: #FFFF;
+    }
+
+    #faq{
+      background-color: #ffff;
     }

@@ -457,6 +457,13 @@
       left: 130px;
     }
 
+    .navbar-faq-tab{
+      color: #ffff;
+      font-size: 20px;
+      position: relative;
+      left: 136px;
+    }
+
     .support{
       width: 100%;
       color: #ffff;
@@ -632,6 +639,11 @@
       margin-bottom: -30px;
     }
 
+    .bottom-section{
+      position: relative;
+      bottom: 300px;
+    }
+
     @keyframes scrollGallery {
       0% {
         transform: translateX(0);
@@ -666,6 +678,10 @@
 
     #features{
       background-color: #FFFF;
+    }
+
+    #faq{
+      background-color: #ffff;
     }
 
   </style>
@@ -778,6 +794,7 @@
     <a href="#home" class="navbar-home-tab">Home</a>
     <a href="#preview" class="navbar-preview-tab">Features</a>
     <a href="#features" class="navbar-features-tab">Preview</a>
+    <a href="#faq" class="navbar-faq-tab">FAQ</a>
   </div>
 
 <!--<div class="centered-content">-->
@@ -896,25 +913,27 @@
       </div>
 
       <div class="other-section">
-      <div class="why">
-        <h2><strong>Why Choose CamATX?</strong></h2>
-        <ul class="bullets">
-          <li><strong>Real-time street-level traffic views</strong></li>
-          <li><strong>AI-powered congestion graphs</strong></li>
-          <li><strong>Avoid surprises and save time</strong></li>
-          <li><strong>Backed by open government data</strong></li>
-          <li><strong>Built for commuters, drivers, tourists, and planners</strong></li>
-        </ul>
-      </div>
+      <section id="faq">
+        <div class="why">
+          <h2><strong>Why Choose CamATX?</strong></h2>
+          <ul class="bullets">
+            <li><strong>Real-time street-level traffic views</strong></li>
+            <li><strong>AI-powered congestion graphs</strong></li>
+            <li><strong>Avoid surprises and save time</strong></li>
+            <li><strong>Backed by open government data</strong></li>
+            <li><strong>Built for commuters, drivers, tourists, and planners</strong></li>
+          </ul>
+        </div>
 
-      <div class="how">
-        <h2><strong>How It Works</strong></h2>
-        <ul class="bullets">
-          <li><strong>Streams live CCTV feeds from Austin's traffic camera network</strong></li>
-          <li><strong>Uses OpenCV to compare weekday vs. weekend congestion</strong></li>
-          <li><strong>Interactive map interface with live and historical data</strong></li>
-        </ul>
-      </div>
+        <div class="how">
+          <h2><strong>How It Works</strong></h2>
+          <ul class="bullets">
+            <li><strong>Streams live CCTV feeds from Austin's traffic camera network</strong></li>
+            <li><strong>Uses OpenCV to compare weekday vs. weekend congestion</strong></li>
+            <li><strong>Interactive map interface with live and historical data</strong></li>
+          </ul>
+        </div>
+      </section>
 
       <div class="support-section">
       <div class="developer-info">
@@ -929,7 +948,7 @@
 
       <div class="center-element">
         <div class="support">
-          <a class="support-text" href="https://austinsdg.onrender.com/privacy-policy.html#contact"><strong>Any Questions? Contact Support</strong></a>
+          <a class="support-text" href="https://camatx.onrender.com/privacy-policy.html#contact"><strong>Any Questions? Contact Support</strong></a>
         </div>
         </div>
       </div>
@@ -942,7 +961,7 @@
         <div class="useful-links">
           <p class="useful-links-title">Useful Links</p>
           <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
-          <a href="https://camatx.onrender.com/index.html" class="faq">Frequently Asked Questions</a>
+          <a href="https://camatx.onrender.com/index.html#faq" class="faq">Frequently Asked Questions</a>
           <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="app-download">App Download</a>
         </div>
         <footer class="footer">
