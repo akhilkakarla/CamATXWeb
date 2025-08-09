@@ -476,8 +476,7 @@
       padding: 110px 90px;
       color: white;
       display: flex;
-      position: relative;
-      bottom: 250px;
+      margin-bottom: 250px;
     }
 
     .bottomBar a{
@@ -575,7 +574,7 @@
 
     .support-section{
       background-color: #ffff;
-      margin-bottom: 250px;
+      margin-bottom: 350px;
     }
 
     .center-element{
@@ -628,7 +627,7 @@
 
     .other-section{
       position: relative;
-      bottom: 450px;
+      bottom: 550px;
     }
 
     .bottom-section{
