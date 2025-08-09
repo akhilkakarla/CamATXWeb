@@ -554,7 +554,7 @@
       color: #ffff;
       font-size: 13px;
       position: relative;
-      right: 620px;
+      right: 623px;
       bottom: -110px;
       text-decoration: none;
       white-space: nowrap;
@@ -591,8 +591,6 @@
       /*margin-bottom: 100px;*/
       margin-bottom: 0px;
       padding-bottom: 0px;
-      margin: 0;
-      padding: 0;
     }
 
     .why{
@@ -604,8 +602,6 @@
       margin-bottom: 260px;
       margin-top: 0px;
       padding-top: 0px;
-      margin: 0;
-      padding: 0;
     }
 
     .how{
