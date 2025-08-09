@@ -589,8 +589,6 @@
       margin-left: 85px;
       border-radius: 30px;
       /*margin-bottom: 100px;*/
-      margin-bottom: 0px;
-      padding-bottom: 0px;
       position: relative;
       bottom: 290px;
     }
@@ -628,7 +626,8 @@
     }
 
     .other-section{
-      margin-bottom: -30px;
+      position: relative;
+      bottom: 100px;
     }
 
     .bottom-section{
