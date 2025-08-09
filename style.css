@@ -458,7 +458,7 @@
       color: #ffff;
       background-color: #3E1E68;
       position: relative;
-      bottom: 300px;
+      bottom: 200px;
       padding: 5px 50px;
       text-decoration: none;
     }
@@ -477,7 +477,7 @@
       color: white;
       display: flex;
       position: relative;
-      bottom: 150px;
+      bottom: 250px;
     }
 
     .bottomBar a{
@@ -575,7 +575,7 @@
 
     .support-section{
       background-color: #ffff;
-      margin-bottom: 150px;
+      margin-bottom: 250px;
     }
 
     .center-element{
@@ -628,7 +628,7 @@
 
     .other-section{
       position: relative;
-      bottom: 300px;
+      bottom: 450px;
     }
 
     .bottom-section{
