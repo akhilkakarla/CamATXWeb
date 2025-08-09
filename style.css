@@ -151,9 +151,8 @@
       width: 100vw;
       padding: 60px 60px;
       transform: translateX(-87px);
-      margin-top: 50px;
       position: relative;
-      top: -1050px;
+      top: -1100px;
       /*transform: translateY(-100px);*/
     }
 
@@ -555,7 +554,7 @@
       font-size: 13px;
       position: relative;
       right: 623px;
-      bottom: -110px;
+      bottom: -95px;
       text-decoration: none;
       white-space: nowrap;
       overflow: hidden;

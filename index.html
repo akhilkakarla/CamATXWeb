@@ -163,9 +163,8 @@
       width: 100vw;
       padding: 60px 60px;
       transform: translateX(-87px);
-      margin-top: 50px;
       position: relative;
-      top: -1050px;
+      top: -1100px;
       /*transform: translateY(-100px);*/
     }
 
@@ -791,28 +790,6 @@
         el.style.padding = '0';
       });
     </script>
-
-    <script>
-      document.querySelectorAll('.navbar a').forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault(); // stop the default jump
-
-          const targetId = this.getAttribute('href').substring(1); // remove the '#'
-          const targetElement = document.getElementById(targetId);
-
-          const navbarHeight = document.querySelector('nav').offsetHeight;
-
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.scrollY - navbarHeight;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        });
-      });
-    </script>
-
 </head>
 
 <body>
@@ -990,7 +967,7 @@
         <div class="useful-links">
           <p class="useful-links-title">Useful Links</p>
           <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
-          <a href="https://camatx.onrender.com/index.html#faq" class="faq">Frequently Asked Questions</a>
+          <a href="#faq" class="faq">Frequently Asked Questions</a>
           <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="app-download">App Download</a>
         </div>
         <footer class="footer">
