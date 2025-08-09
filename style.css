@@ -555,7 +555,7 @@
       font-size: 13px;
       position: relative;
       right: 623px;
-      bottom: -110px;
+      bottom: -95px;
       text-decoration: none;
       white-space: nowrap;
       overflow: hidden;
@@ -591,6 +591,8 @@
       /*margin-bottom: 100px;*/
       margin-bottom: 0px;
       padding-bottom: 0px;
+      position: relative;
+      bottom: 400px;
     }
 
     .why{
@@ -599,9 +601,8 @@
       background-color: #ffff;
       font-size: 20px;
       font-family:Arial, Helvetica, sans-serif;
-      margin-bottom: 260px;
-      margin-top: 0px;
-      padding-top: 0px;
+      /*margin-bottom: 260px;*/
+      margin-top: -300px;
     }
 
     .how{
