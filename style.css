@@ -58,10 +58,8 @@
     }
 
     .full-width {
-      width: 3456px;   
-      height: 10000px;       
-      padding: 5vw;
-      overflow: hidden;             
+      width: 3456px;          
+      padding: 5vw;             
       box-sizing: border-box;
     }
 
