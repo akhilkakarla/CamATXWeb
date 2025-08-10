@@ -1,4 +1,4 @@
-    body {
+   body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       background-color: #FFFFFF;
@@ -8,6 +8,7 @@
       padding-top: 20px;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      overflow: hidden;
     }
 
     .title{
