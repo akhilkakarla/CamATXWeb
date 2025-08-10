@@ -675,9 +675,16 @@
     }
 
 
-    @media screen and (max-width: 1080px){
+    @media screen and (width < 1536px){
       .scroll-wrapper{
           overflow-x: scroll;
+      }
+
+      html, body{
+        width: 1536px;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
       }
     }
 
@@ -688,12 +695,12 @@
 
     #preview{
       background-color: #FFFF;
-      scroll-margin-top: 980px;
+      scroll-margin-top: 1080px;
     }
 
     #features{
       background-color: #FFFF;
-      scroll-margin-top: 520px;
+      scroll-margin-top: 650px;
     }
 
     #faq{
