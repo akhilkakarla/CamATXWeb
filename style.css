@@ -135,8 +135,8 @@
       max-height: 1700px;
       margin: 0;
       padding: 0;
-      width: 100%;
-      overflow-x: none;
+      width: 1536px;
+      overflow-x: scroll;
       margin-bottom: 0px;
       padding-bottom: 0px;
     }
