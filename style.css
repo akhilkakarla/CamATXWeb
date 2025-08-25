@@ -146,7 +146,7 @@
       overflow-y: hidden;
       white-space: nowrap;
       scroll-behavior: smooth;
-      width: 100%;
+      width: 1500px;
       background-color: #3E1E68;
       color: #FFFF;
       display: flex;
@@ -475,7 +475,7 @@
     }
 
     .bottomBar{
-      width: 100%;
+      width: 1500px;
       background-color: black;
       padding: 110px 90px;
       color: white;
