@@ -669,6 +669,17 @@
       overflow-x: hidden;
     }
 
+    .fade-in {
+      opacity: 0;                 /* Start hidden */
+      transform: translateY(20px); /* Slightly pushed down */
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;                  /* Fade in */
+      transform: translateY(0);    /* Move into place */
+    }
+
     h2 {
       margin-top: 0; /* remove space above heading */
     }
