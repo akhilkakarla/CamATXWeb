@@ -1,2 +1,2 @@
 let el = document.querySelector("#bottomBar");
-el.textContent = el.textContent.trimEnd();
+el.innerHTML = el.innerHTML.trim();
