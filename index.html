@@ -4,7 +4,7 @@
   </div>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet1" href="style.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <link rel="camatx-icon" href="/logo.png" type="image/png">
   <title class="title">CamATX</title>
 
@@ -18,6 +18,19 @@
       padding: 0;
       padding-top: 20px;
       overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
@@ -140,16 +153,6 @@
       text-align: right;
       margin-left: auto;
       /*margin-right: 100px;*/
-    }
-
-    html, body {
-      max-height: 1300px;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      margin-bottom: 0px;
-      padding-bottom: 0px;
     }
 
     .screenshot-row {
@@ -289,10 +292,6 @@
       height: auto;
       display: block;
       object-fit: cover;
-    }
-    
-    html {
-      scroll-behavior: smooth;
     }
 
     .features-title{
