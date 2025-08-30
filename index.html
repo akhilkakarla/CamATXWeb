@@ -32,8 +32,8 @@
     }
 
     html {
-      scroll-behavior: smooth;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .title{
@@ -79,13 +79,14 @@
       padding: 40px 20px;
       background: white;
       display: flex;
-      justify-content: center; /* horizontally center */
+      justify-content: center; 
       align-items: center; 
     }
 
     .full-width {
-      width: 1536px;          
-      padding: 5vw;             
+      width: 100%;         
+      max-width: 1536px;
+      padding: 0 5vw; 
       box-sizing: border-box;
     }
 
@@ -168,7 +169,7 @@
       display: flex;
       gap: 16px;
       scroll-snap-type: x mandatory;
-      width: 100vw;
+      width: 100%;
       padding: 60px 60px;
       transform: translateX(-87px);
       margin-top: 50px;
@@ -470,12 +471,12 @@
     }
 
     .support{
-      width: 100vw;
+      width: 100%;
       color: #ffff;
       background-color: #3E1E68;
       position: relative;
       bottom: 200px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
       padding: 5px 50px;
       text-decoration: none;
     }
@@ -488,7 +489,7 @@
     }
 
     .bottomBar{
-      width: 100vw;
+      width: 100%;
       background-color: black;
       padding: 110px 90px;
       color: white;
@@ -820,6 +821,12 @@
         el.style.margin = '0';
         el.style.padding = '0';
       });
+    </script>
+
+    <script>
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
     </script>
 
     <script src="fade-in.js"></script>
