@@ -462,6 +462,7 @@
       background-color: #3E1E68;
       position: relative;
       bottom: 200px;
+      margin-bottom: 20px;
       padding: 5px 50px;
       text-decoration: none;
     }
@@ -481,7 +482,7 @@
       display: flex;
       position: relative;  /* or remove this entirely */
       bottom: 0;           /* reset */
-      margin-top: 40px;
+      margin-top: 0;
       overflow: hidden;
     }
 
