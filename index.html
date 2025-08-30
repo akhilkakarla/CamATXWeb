@@ -17,7 +17,13 @@
       margin: 0;
       padding: 0;
       padding-top: 20px;
+      scroll-behavior: smooth;
+      max-height: 1300px;
+      max-width: 1000px;
       overflow-x: hidden;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
@@ -142,22 +148,12 @@
       /*margin-right: 100px;*/
     }
 
-    html, body {
-      max-height: 1300px;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-    }
-
     .screenshot-row {
       overflow-x: hidden;
       overflow-y: hidden;
       white-space: nowrap;
       scroll-behavior: smooth;
-      width: 100%;
+      width: 3000px;
       background-color: #3E1E68;
       color: #FFFF;
       display: flex;
@@ -289,10 +285,6 @@
       height: auto;
       display: block;
       object-fit: cover;
-    }
-    
-    html {
-      scroll-behavior: smooth;
     }
 
     .features-title{
@@ -436,6 +428,7 @@
 
     .infinite-gallery {
       display: flex;
+      width: 100%;
       gap: 10px;
       animation: scrollGallery 25s linear infinite;
     }
@@ -691,9 +684,9 @@
       }
 
       html, body{
-        width: 1000px;
+        width: 1536px;
         max-height: 1200px;
-        max-width: 1000px;
+        max-width: 1536px;
         margin: 0;
         padding: 0;
         overflow-x: scroll;
