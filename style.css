@@ -6,14 +6,8 @@
       margin: 0;
       padding: 0;
       padding-top: 20px;
-      scroll-behavior: smooth;
-      max-width: 1536px;
       overflow-x: hidden;
-    }
-
-    html {
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
     .title{
@@ -137,12 +131,22 @@
       /*margin-right: 100px;*/
     }
 
+    html, body {
+      max-height: 1300px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+
     .screenshot-row {
       overflow-x: hidden;
       overflow-y: hidden;
       white-space: nowrap;
       scroll-behavior: smooth;
-      width: 3000px;
+      width: 100%;
       background-color: #3E1E68;
       color: #FFFF;
       display: flex;
@@ -274,6 +278,10 @@
       height: auto;
       display: block;
       object-fit: cover;
+    }
+    
+    html {
+      scroll-behavior: smooth;
     }
 
     .features-title{
@@ -417,7 +425,6 @@
 
     .infinite-gallery {
       display: flex;
-      width: 100%;
       gap: 10px;
       animation: scrollGallery 25s linear infinite;
     }
@@ -657,6 +664,12 @@
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
+    .hide-overflow{
+      margin-top: 0px;
+      margin-bottom: 0px;
+      overflow-y: hidden;
+    }
+
     .fade-in.visible {
       opacity: 1;                  /* Fade in */
       transform: translateY(0);    /* Move into place */
@@ -674,7 +687,7 @@
 
       html, body{
         width: 1536px;
-        max-height: 1200px;
+        max-height: 1700px;
         max-width: 1536px;
         margin: 0;
         padding: 0;
