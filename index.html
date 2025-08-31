@@ -849,17 +849,17 @@
       const MAX_SCROLL = 4100;  
 
       window.addEventListener("scroll", () => {
-        
+        document.documentElement.style.overflowX = "hidden";
         if (window.scrollY > MAX_SCROLL) {
           // lock the scroll position
           window.scrollTo(0, MAX_SCROLL);
           // prevent further scrolling
           document.body.style.overflow = "hidden";
-          document.body.style.overflow-x == "none";
+          document.documentElement.style.overflowX = "hidden";
         } else {
           // allow scrolling normally again
           document.body.style.overflow = "auto";
-          document.body.style.overflow-x == "none";
+          document.documentElement.style.overflowX = "hidden";
         }
       });
     </script>
