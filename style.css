@@ -690,6 +690,7 @@
           overflow-x: scroll;
       }
 
+      /*
       body, html{
         max-width: 1728px;
         overflow-x: scroll;
@@ -698,6 +699,7 @@
         padding: 0;
         display: block;
       }
+      */
     }
 
     #home{
