@@ -831,7 +831,7 @@
   const root = document.scrollingElement || document.documentElement;
 
   // Select the element where scrolling should stop
-  const stopElement = document.querySelector(".bottomBar");
+  const stopElement = document.querySelector("#bottomBar");
 
   function getLimit() {
     if (!stopElement) return Infinity;
@@ -1052,21 +1052,23 @@
           </div>
         </div>
       
-        <div class="bottomBar">
-          <div class="bottomBar-tagline">
-            <p class="bottomBar-tagline-title">CamATX</p>
-            <p>Made for Austin area residents.</p>
+        <section id="bottomBar">
+          <div class="bottomBar">
+            <div class="bottomBar-tagline">
+              <p class="bottomBar-tagline-title">CamATX</p>
+              <p>Made for Austin area residents.</p>
+            </div>
+            <div class="useful-links">
+              <p class="useful-links-title">Useful Links</p>
+              <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
+              <a href="#faq" class="faq">Frequently Asked Questions</a>
+              <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="app-download">App Download</a>
+            </div>
+            <footer class="footer">
+              &copy; 2025 Akhil Kakarla. All Rights Reserved.
+            </footer>
           </div>
-          <div class="useful-links">
-            <p class="useful-links-title">Useful Links</p>
-            <a href="privacy-policy.html" class="privacy-policy">Privacy Policy</a>
-            <a href="#faq" class="faq">Frequently Asked Questions</a>
-            <a href="https://apps.apple.com/us/app/camatx/id6748239394" class="app-download">App Download</a>
-          </div>
-          <footer class="footer">
-            &copy; 2025 Akhil Kakarla. All Rights Reserved.
-          </footer>
-        </div>
+        </section>
       </div>
     </div>
 </div>
