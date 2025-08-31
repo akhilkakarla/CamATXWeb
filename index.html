@@ -23,8 +23,6 @@
 
     html, body {
       width: 100vw;
-      height: 2000px;
-      max-height: 2000px;
       display: block;
       width: auto;
       height: auto;
@@ -843,6 +841,23 @@
       black.querySelectorAll("*").forEach(el => {
         el.style.margin = "0";
         el.style.padding = "0";
+      });
+    </script>
+
+    <script>
+      // maximum height allowed for scrolling (in px)
+      const MAX_SCROLL = 2000;  
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > MAX_SCROLL) {
+          // lock the scroll position
+          window.scrollTo(0, MAX_SCROLL);
+          // prevent further scrolling
+          document.body.style.overflow = "hidden";
+        } else {
+          // allow scrolling normally again
+          document.body.style.overflow = "auto";
+        }
       });
     </script>
 
