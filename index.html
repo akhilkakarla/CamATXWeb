@@ -826,77 +826,30 @@
 
     <script src="fade-in.js"></script>
 
-    <script>
-(function () {
-  const root = document.scrollingElement || document.documentElement;
-
-  // Compute the scroll limit as 90% of total scrollable distance
-  function computeLimit() {
-    const scrollable = Math.max(0, root.scrollHeight - root.clientHeight);
-    return Math.floor(scrollable * 0.9);
+ <script>
+  function updateMaxScroll() {
+    // 90% of the total website/document height
+    return Math.floor(document.documentElement.scrollHeight * 0.9);
   }
 
-  let LIMIT = computeLimit();
+  let MAX_SCROLL = updateMaxScroll();
 
-  function updateLimitAndClamp() {
-    LIMIT = computeLimit();
-    clamp();
-  }
-
-  function clamp() {
-    if (root.scrollTop > LIMIT) {
-      root.scrollTop = LIMIT;
-    }
-  }
-
-  // Clamp during normal scrolling
-  window.addEventListener("scroll", clamp, { passive: true });
-
-  // Block wheel/trackpad if at limit
-  window.addEventListener("wheel", (e) => {
-    if (root.scrollTop >= LIMIT && e.deltaY > 0) {
-      e.preventDefault();
-      root.scrollTop = LIMIT;
-    }
-  }, { passive: false });
-
-  // Block touch gestures if at limit
-  let touchStartY = 0;
-  window.addEventListener("touchstart", (e) => {
-    if (e.touches.length) touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  window.addEventListener("touchmove", (e) => {
-    if (!e.touches.length) return;
-    const deltaY = touchStartY - e.touches[0].clientY; // >0 means down
-    if (root.scrollTop >= LIMIT && deltaY > 0) {
-      e.preventDefault();
-      root.scrollTop = LIMIT;
-    }
-  }, { passive: false });
-
-  // Block PageDown/Space/End keys
-  const blockKeys = new Set(["PageDown", "ArrowDown", "Space", " "]);
-  window.addEventListener("keydown", (e) => {
-    if (root.scrollTop >= LIMIT) {
-      if (blockKeys.has(e.code) || blockKeys.has(e.key)) {
-        e.preventDefault();
-      }
-      if (e.code === "End" || e.key === "End") {
-        e.preventDefault();
-        root.scrollTop = LIMIT;
-      }
-    }
+  // Recalculate if the page size changes
+  window.addEventListener("resize", () => {
+    MAX_SCROLL = updateMaxScroll();
   });
 
-  // Recalculate on resize or DOM changes
-  window.addEventListener("resize", updateLimitAndClamp);
-  const mo = new MutationObserver(() => updateLimitAndClamp());
-  mo.observe(document.body, { childList: true, subtree: true, attributes: true });
+  // Disable horizontal scrolling
+  document.documentElement.style.overflowX = "hidden";
 
-  // Initial
-  updateLimitAndClamp();
-})();
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > MAX_SCROLL) {
+      window.scrollTo(0, MAX_SCROLL);
+      document.body.style.overflowY = "hidden"; // lock vertical scroll
+    } else {
+      document.body.style.overflowY = "auto"; // re-enable if above limit
+    }
+  });
 </script>
 
     <!--<script src="remove-whitespace.js"></script>-->
