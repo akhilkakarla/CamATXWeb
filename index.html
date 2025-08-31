@@ -827,35 +827,32 @@
     <script src="fade-in.js"></script>
 
 <script>
-(function () {
+(function() {
   const root = document.scrollingElement || document.documentElement;
+  const stopElement = document.getElementById("bottomBar"); // use your element's ID
 
-  // Select the element where scrolling should stop
-  const stopElement = document.querySelector("#bottomBar");
+  if (!stopElement) return;
 
   function getLimit() {
-    if (!stopElement) return Infinity;
-    // Top offset of the element relative to the document
+    // Top position of the element relative to document
     return stopElement.offsetTop;
   }
 
   let LIMIT = getLimit();
 
-  // Recalculate limit on resize (layout shifts, font changes, etc.)
+  // Update limit if window resizes
   window.addEventListener("resize", () => {
     LIMIT = getLimit();
   });
 
-  // Clamp scroll if it passes the element
-  function clamp() {
+  // Main scroll handler
+  window.addEventListener("scroll", () => {
     if (root.scrollTop > LIMIT) {
       root.scrollTop = LIMIT;
     }
-  }
+  }, { passive: false });
 
-  window.addEventListener("scroll", clamp, { passive: true });
-
-  // Also block wheel/trackpad past the element
+  // Block wheel/trackpad scrolling past the limit
   window.addEventListener("wheel", (e) => {
     if (root.scrollTop >= LIMIT && e.deltaY > 0) {
       e.preventDefault();
@@ -863,7 +860,7 @@
     }
   }, { passive: false });
 
-  // Block touch gestures past the element
+  // Block touch scrolling past the limit
   let touchStartY = 0;
   window.addEventListener("touchstart", (e) => {
     if (e.touches.length) touchStartY = e.touches[0].clientY;
