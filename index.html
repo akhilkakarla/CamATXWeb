@@ -846,10 +846,10 @@
 
     <script>
       // maximum height allowed for scrolling (in px)
-      const MAX_SCROLL = 4100;  
+      const MAX_SCROLL = 4085;  
+      document.documentElement.style.overflowX = "hidden";
 
       window.addEventListener("scroll", () => {
-        document.documentElement.style.overflowX = "hidden";
         if (window.scrollY > MAX_SCROLL) {
           // lock the scroll position
           window.scrollTo(0, MAX_SCROLL);
