@@ -826,14 +826,14 @@
     <script src="fade-in.js"></script>
 
     <script>
-            function updateMaxScroll() {
-        // 90% of the current viewport height
-        return Math.floor(window.innerHeight * 0.9);
+      function updateMaxScroll() {
+        // 90% of the total website/document height
+        return Math.floor(document.documentElement.scrollHeight * 0.9);
       }
 
       let MAX_SCROLL = updateMaxScroll();
 
-      // Update when viewport resizes (e.g., rotation on mobile)
+      // Recalculate if the page size changes
       window.addEventListener("resize", () => {
         MAX_SCROLL = updateMaxScroll();
       });
