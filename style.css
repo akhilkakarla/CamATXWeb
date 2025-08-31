@@ -12,6 +12,7 @@
 
     html, body {
       width: 100vw;
+      height: 50%;
       display: block;
       width: auto;
       height: auto;
