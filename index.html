@@ -826,30 +826,89 @@
     <script src="fade-in.js"></script>
 
     <script>
-      function updateMaxScroll() {
-        // 90% of the total website/document height
-        return Math.floor(document.documentElement.scrollHeight * 0.9);
-      }
+      (function () {
+        // The element that actually scrolls (works across browsers)
+        const root = document.scrollingElement || document.documentElement;
 
-      let MAX_SCROLL = updateMaxScroll();
+        // Kill horizontal scrolling entirely
+        document.documentElement.style.overflowX = "hidden";
+        document.body.style.overflowX = "hidden";
 
-      // Recalculate if the page size changes
-      window.addEventListener("resize", () => {
-        MAX_SCROLL = updateMaxScroll();
-      });
-
-      // Disable horizontal scrolling
-      document.documentElement.style.overflowX = "hidden";
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > MAX_SCROLL) {
-          window.scrollTo(0, MAX_SCROLL);
-          document.body.style.overflowY = "hidden"; // lock vertical scroll
-        } else {
-          document.body.style.overflowY = "auto"; // re-enable if above limit
+        // Compute the limit as 90% of total *scrollable distance*
+        // scrollable distance = scrollHeight - clientHeight
+        function computeLimit() {
+          const scrollable = Math.max(0, root.scrollHeight - root.clientHeight);
+          return Math.floor(scrollable * 0.9);
         }
-      });
+
+        let LIMIT = 0;
+
+        function updateLimitAndClamp() {
+          LIMIT = computeLimit();
+          clamp();
+        }
+
+        // Ensure we never sit past the limit
+        function clamp() {
+          if (root.scrollTop > LIMIT) {
+            root.scrollTop = LIMIT;
+          }
+        }
+
+        // Soft clamp during normal scrolls
+        window.addEventListener("scroll", clamp, { passive: true });
+
+        // Prevent scrolling *past* the limit via mouse wheel/trackpad
+        function onWheel(e) {
+          if (root.scrollTop >= LIMIT && e.deltaY > 0) {
+            e.preventDefault();
+            root.scrollTop = LIMIT;
+          }
+        }
+        window.addEventListener("wheel", onWheel, { passive: false });
+
+        // Prevent scrolling *past* the limit via touch
+        let touchStartY = 0;
+        window.addEventListener("touchstart", (e) => {
+          if (e.touches && e.touches.length) touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener("touchmove", (e) => {
+          if (!e.touches || !e.touches.length) return;
+          const deltaY = touchStartY - e.touches[0].clientY; // >0 means scrolling down
+          if (root.scrollTop >= LIMIT && deltaY > 0) {
+            e.preventDefault();
+            root.scrollTop = LIMIT;
+          }
+        }, { passive: false });
+
+        // Prevent going past the limit via keyboard
+        const blockKeys = new Set(["PageDown", "ArrowDown", "Space", " "]);
+        window.addEventListener("keydown", (e) => {
+          if (root.scrollTop >= LIMIT) {
+            if (blockKeys.has(e.code) || blockKeys.has(e.key)) {
+              e.preventDefault();
+            }
+            if (e.code === "End" || e.key === "End") {
+              e.preventDefault();
+              root.scrollTop = LIMIT;
+            }
+          }
+        });
+
+        // Recalculate when the viewport or content changes
+        window.addEventListener("load", updateLimitAndClamp);
+        window.addEventListener("resize", updateLimitAndClamp);
+
+        // Watch for DOM/content changes that alter page height
+        const mo = new MutationObserver(() => updateLimitAndClamp());
+        mo.observe(document.body, { childList: true, subtree: true, attributes: true, characterData: true });
+
+        // Initial compute for early inline execution
+        updateLimitAndClamp();
+      })();
     </script>
+
 
     <!--<script src="remove-whitespace.js"></script>-->
 
