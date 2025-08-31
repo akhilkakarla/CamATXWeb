@@ -826,19 +826,27 @@
     <script src="fade-in.js"></script>
 
     <script>
-      // maximum height allowed for scrolling (in px)
-      const MAX_SCROLL = 4075;  
+            function updateMaxScroll() {
+        // 90% of the current viewport height
+        return Math.floor(window.innerHeight * 0.9);
+      }
+
+      let MAX_SCROLL = updateMaxScroll();
+
+      // Update when viewport resizes (e.g., rotation on mobile)
+      window.addEventListener("resize", () => {
+        MAX_SCROLL = updateMaxScroll();
+      });
+
+      // Disable horizontal scrolling
       document.documentElement.style.overflowX = "hidden";
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > MAX_SCROLL) {
-          // lock the scroll position
           window.scrollTo(0, MAX_SCROLL);
-          // prevent further scrolling
-          document.body.style.overflowY = "hidden";
+          document.body.style.overflowY = "hidden"; // lock vertical scroll
         } else {
-          // allow scrolling normally again
-          document.body.style.overflowY = "hidden";
+          document.body.style.overflowY = "auto"; // re-enable if above limit
         }
       });
     </script>
