@@ -816,13 +816,6 @@
         e.preventDefault();
       }, { passive: false });
     </script>
-    
-    <script>
-        document.querySelectorAll('*').forEach(el => {
-        el.style.margin = '0';
-        el.style.padding = '0';
-      });
-    </script>
 
     <script>
       window.onbeforeunload = function () {
@@ -833,20 +826,8 @@
     <script src="fade-in.js"></script>
 
     <script>
-        purple.querySelectorAll("*").forEach(el => {
-        el.style.margin = "0";
-        el.style.padding = "0";
-      });
-
-      black.querySelectorAll("*").forEach(el => {
-        el.style.margin = "0";
-        el.style.padding = "0";
-      });
-    </script>
-
-    <script>
       // maximum height allowed for scrolling (in px)
-      const MAX_SCROLL = 4085;  
+      const MAX_SCROLL = 4075;  
       document.documentElement.style.overflowX = "hidden";
 
       window.addEventListener("scroll", () => {
@@ -854,12 +835,10 @@
           // lock the scroll position
           window.scrollTo(0, MAX_SCROLL);
           // prevent further scrolling
-          document.body.style.overflow = "hidden";
-          document.documentElement.style.overflowX = "hidden";
+          document.body.style.overflowY = "hidden";
         } else {
           // allow scrolling normally again
-          document.body.style.overflow = "auto";
-          document.documentElement.style.overflowX = "hidden";
+          document.body.style.overflowY = "hidden";
         }
       });
     </script>
