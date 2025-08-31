@@ -696,9 +696,18 @@
     }
 
 
-    @media screen and (width < 1536px){
+    @media screen and (width < 1728px){
       .scroll-wrapper{
           overflow-x: scroll;
+      }
+
+      body, html{
+        max-width: 1728px;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        display: block;
       }
     }
 
