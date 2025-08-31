@@ -23,7 +23,6 @@
 
     html, body {
       width: 100vw;
-      height: 50%;
       display: block;
       width: auto;
       height: auto;
@@ -827,56 +826,21 @@
     <script src="fade-in.js"></script>
 
 <script>
-(function() {
-  const root = document.scrollingElement || document.documentElement;
-  const stopElement = document.getElementById("bottomBar"); // use your element's ID
+  const MAX_SCROLL = 4075;  
 
-  if (!stopElement) return;
+  // disable horizontal scrolling entirely
+  document.documentElement.style.overflowX = "hidden";
 
-  function getLimit() {
-    // Top position of the element relative to document
-    return stopElement.offsetTop;
-  }
-
-  let LIMIT = getLimit();
-
-  // Update limit if window resizes
-  window.addEventListener("resize", () => {
-    LIMIT = getLimit();
-  });
-
-  // Main scroll handler
   window.addEventListener("scroll", () => {
-    if (root.scrollTop > LIMIT) {
-      root.scrollTop = LIMIT;
+    if (window.scrollY > MAX_SCROLL) {
+      window.scrollTo(0, MAX_SCROLL);
+      document.body.style.overflowY = "hidden"; // lock vertical scroll
+    } else {
+      document.body.style.overflowY = "auto"; // re-enable if above limit
     }
-  }, { passive: false });
-
-  // Block wheel/trackpad scrolling past the limit
-  window.addEventListener("wheel", (e) => {
-    if (root.scrollTop >= LIMIT && e.deltaY > 0) {
-      e.preventDefault();
-      root.scrollTop = LIMIT;
-    }
-  }, { passive: false });
-
-  // Block touch scrolling past the limit
-  let touchStartY = 0;
-  window.addEventListener("touchstart", (e) => {
-    if (e.touches.length) touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  window.addEventListener("touchmove", (e) => {
-    if (!e.touches.length) return;
-    const deltaY = touchStartY - e.touches[0].clientY;
-    if (root.scrollTop >= LIMIT && deltaY > 0) {
-      e.preventDefault();
-      root.scrollTop = LIMIT;
-    }
-  }, { passive: false });
-
-})();
+  });
 </script>
+
 
 
     <!--<script src="remove-whitespace.js"></script>-->
