@@ -826,31 +826,61 @@
 
     <script src="fade-in.js"></script>
 
- <script>
-  function updateMaxScroll() {
-    // 90% of the total website/document height
-    return Math.floor(document.documentElement.scrollHeight * 0.9);
+<script>
+(function () {
+  const root = document.scrollingElement || document.documentElement;
+
+  // Select the element where scrolling should stop
+  const stopElement = document.querySelector(".bottomBar");
+
+  function getLimit() {
+    if (!stopElement) return Infinity;
+    // Top offset of the element relative to the document
+    return stopElement.offsetTop;
   }
 
-  let MAX_SCROLL = updateMaxScroll();
+  let LIMIT = getLimit();
 
-  // Recalculate if the page size changes
+  // Recalculate limit on resize (layout shifts, font changes, etc.)
   window.addEventListener("resize", () => {
-    MAX_SCROLL = updateMaxScroll();
+    LIMIT = getLimit();
   });
 
-  // Disable horizontal scrolling
-  document.documentElement.style.overflowX = "hidden";
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > MAX_SCROLL) {
-      window.scrollTo(0, MAX_SCROLL);
-      document.body.style.overflowY = "hidden"; // lock vertical scroll
-    } else {
-      document.body.style.overflowY = "auto"; // re-enable if above limit
+  // Clamp scroll if it passes the element
+  function clamp() {
+    if (root.scrollTop > LIMIT) {
+      root.scrollTop = LIMIT;
     }
-  });
+  }
+
+  window.addEventListener("scroll", clamp, { passive: true });
+
+  // Also block wheel/trackpad past the element
+  window.addEventListener("wheel", (e) => {
+    if (root.scrollTop >= LIMIT && e.deltaY > 0) {
+      e.preventDefault();
+      root.scrollTop = LIMIT;
+    }
+  }, { passive: false });
+
+  // Block touch gestures past the element
+  let touchStartY = 0;
+  window.addEventListener("touchstart", (e) => {
+    if (e.touches.length) touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  window.addEventListener("touchmove", (e) => {
+    if (!e.touches.length) return;
+    const deltaY = touchStartY - e.touches[0].clientY;
+    if (root.scrollTop >= LIMIT && deltaY > 0) {
+      e.preventDefault();
+      root.scrollTop = LIMIT;
+    }
+  }, { passive: false });
+
+})();
 </script>
+
 
     <!--<script src="remove-whitespace.js"></script>-->
 
