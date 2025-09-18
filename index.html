@@ -838,42 +838,26 @@
   // disable horizontal scrolling entirely
   document.documentElement.style.overflowX = "hidden";
 
-  // Function to calculate the maximum scroll position dynamically
-  function getMaxScrollPosition() {
+  // Function to set document height to exactly match bottomBar position
+  function setDocumentHeight() {
     const bottomBar = document.getElementById('bottomBar');
     if (bottomBar) {
       // Get the bottom position of the bottomBar element
       const bottomBarRect = bottomBar.getBoundingClientRect();
       const bottomBarBottom = bottomBarRect.bottom + window.scrollY;
       
-      // Calculate the maximum scroll position (bottom of bottomBar minus viewport height)
-      const maxScroll = bottomBarBottom - window.innerHeight;
-      
-      // Ensure we don't have a negative value
-      return Math.max(0, maxScroll);
+      // Set the document height to exactly match the bottomBar bottom position
+      document.documentElement.style.height = bottomBarBottom + 'px';
+      document.body.style.height = bottomBarBottom + 'px';
     }
-    
-    // Fallback to a reasonable default if bottomBar is not found
-    return document.documentElement.scrollHeight - window.innerHeight;
   }
 
-  let maxScrollPosition = 0;
-
-  // Calculate initial max scroll position
-  function updateMaxScrollPosition() {
-    maxScrollPosition = getMaxScrollPosition();
-  }
-
-  // Update on page load and resize
-  window.addEventListener('load', updateMaxScrollPosition);
-  window.addEventListener('resize', updateMaxScrollPosition);
-
-  // Handle scroll events
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > maxScrollPosition) {
-      window.scrollTo(0, maxScrollPosition);
-    }
-  });
+  // Set height on page load and resize
+  window.addEventListener('load', setDocumentHeight);
+  window.addEventListener('resize', setDocumentHeight);
+  
+  // Also set height after a short delay to ensure all content is loaded
+  setTimeout(setDocumentHeight, 100);
 </script>
 
 
@@ -1065,10 +1049,5 @@
             </footer>
           </div>
         </section>
-      </div>
-    </div>
-</div>
-<!--</div>-->
-<!--</div>-->
 </body>
 </html>
