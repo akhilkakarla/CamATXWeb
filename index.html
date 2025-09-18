@@ -835,17 +835,43 @@
     <script src="fade-in.js"></script>
 
 <script>
-  const MAX_SCROLL = 4075;  
-
   // disable horizontal scrolling entirely
   document.documentElement.style.overflowX = "hidden";
 
+  // Function to calculate the maximum scroll position dynamically
+  function getMaxScrollPosition() {
+    const bottomBar = document.getElementById('bottomBar');
+    if (bottomBar) {
+      // Get the bottom position of the bottomBar element
+      const bottomBarRect = bottomBar.getBoundingClientRect();
+      const bottomBarBottom = bottomBarRect.bottom + window.scrollY;
+      
+      // Calculate the maximum scroll position (bottom of bottomBar minus viewport height)
+      const maxScroll = bottomBarBottom - window.innerHeight;
+      
+      // Ensure we don't have a negative value
+      return Math.max(0, maxScroll);
+    }
+    
+    // Fallback to a reasonable default if bottomBar is not found
+    return document.documentElement.scrollHeight - window.innerHeight;
+  }
+
+  let maxScrollPosition = 0;
+
+  // Calculate initial max scroll position
+  function updateMaxScrollPosition() {
+    maxScrollPosition = getMaxScrollPosition();
+  }
+
+  // Update on page load and resize
+  window.addEventListener('load', updateMaxScrollPosition);
+  window.addEventListener('resize', updateMaxScrollPosition);
+
+  // Handle scroll events
   window.addEventListener("scroll", () => {
-    if (window.scrollY > MAX_SCROLL) {
-      window.scrollTo(0, MAX_SCROLL);
-      document.body.style.overflowY = "hidden"; // lock vertical scroll
-    } else {
-      document.body.style.overflowY = "auto"; // re-enable if above limit
+    if (window.scrollY > maxScrollPosition) {
+      window.scrollTo(0, maxScrollPosition);
     }
   });
 </script>
