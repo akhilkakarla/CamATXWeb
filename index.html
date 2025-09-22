@@ -835,29 +835,47 @@
     <script src="fade-in.js"></script>
 
 <script>
-  // disable horizontal scrolling entirely
-  document.documentElement.style.overflowX = "hidden";
+  const MAC16_WIDTH = 1728; // Logical width for MacBook Pro 16"
+
+  // Enable horizontal scroll only when viewport is narrower than 1728,
+  // and clamp content width to exactly 1728 so users can scroll only up to that width.
+  function updateHorizontalScrollMode() {
+    const isNarrow = window.innerWidth < MAC16_WIDTH;
+
+    if (isNarrow) {
+      document.documentElement.style.overflowX = 'auto';
+      document.body.style.overflowX = 'auto';
+      document.documentElement.style.width = MAC16_WIDTH + 'px';
+      document.body.style.width = MAC16_WIDTH + 'px';
+    } else {
+      document.documentElement.style.width = '';
+      document.body.style.width = '';
+      document.documentElement.style.overflowX = 'hidden';
+      document.body.style.overflowX = 'hidden';
+      // Ensure we are not horizontally scrolled on wide screens
+      if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
+    }
+  }
 
   // Function to set document height to exactly match bottomBar position
   function setDocumentHeight() {
     const bottomBar = document.getElementById('bottomBar');
     if (bottomBar) {
-      // Get the bottom position of the bottomBar element
       const bottomBarRect = bottomBar.getBoundingClientRect();
       const bottomBarBottom = bottomBarRect.bottom + window.scrollY;
-      
-      // Set the document height to exactly match the bottomBar bottom position
       document.documentElement.style.height = bottomBarBottom + 'px';
       document.body.style.height = bottomBarBottom + 'px';
     }
   }
 
-  // Set height on page load and resize
-  window.addEventListener('load', setDocumentHeight);
-  window.addEventListener('resize', setDocumentHeight);
-  
-  // Also set height after a short delay to ensure all content is loaded
-  setTimeout(setDocumentHeight, 100);
+  function onResizeOrLoad() {
+    updateHorizontalScrollMode();
+    setDocumentHeight();
+  }
+
+  window.addEventListener('load', onResizeOrLoad);
+  window.addEventListener('resize', onResizeOrLoad);
+  setTimeout(onResizeOrLoad, 100);
 </script>
 
 
