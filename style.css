@@ -8,6 +8,7 @@ body {
   padding-top: 20px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  height: 90%;
 }
 
 html, body {
@@ -18,6 +19,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  height: 90%;
 }
 
 html {
@@ -680,6 +682,7 @@ img {
   transform: translateY(0); 
 }
 
+/*
 .remove-whitespace{
   background-color: #ffff;
   height: 0;
@@ -695,6 +698,7 @@ img {
   padding: 0 !important;
   line-height: 0 !important;
 }
+*/
 
 h2 {
   margin-top: 0;
