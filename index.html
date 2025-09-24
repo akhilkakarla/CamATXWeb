@@ -870,40 +870,42 @@
     }
   }
 
-  // Helper: determine if bottomBar is fully visible in viewport
-  function isBottomBarFullyVisible() {
+  // Calculate the maximum vertical scroll position (so bottomBar bottom aligns with viewport bottom)
+  let maxScrollPosition = 0;
+  function updateMaxScrollLimit() {
     const bottomBar = document.getElementById('bottomBar');
-    if (!bottomBar) return false;
+    if (!bottomBar) return;
     const rect = bottomBar.getBoundingClientRect();
-    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    const bottom = rect.bottom + window.scrollY;
+    // Max scroll so that bottomBar bottom is visible without overscrolling past it
+    maxScrollPosition = Math.max(0, bottom - window.innerHeight);
   }
 
-  // Toggle vertical scroll based on bottomBar visibility
-  function enforceScrollLockAtBottom() {
-    if (isBottomBarFullyVisible()) {
-      document.documentElement.style.overflowY = 'hidden';
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.documentElement.style.overflowY = '';
-      document.body.style.overflowY = '';
+  // Clamp scrolling so it cannot go beyond the computed maxScrollPosition
+  function clampVerticalScroll() {
+    if (window.scrollY > maxScrollPosition) {
+      window.scrollTo(0, maxScrollPosition);
     }
   }
 
   // Set height on page load and resize
   window.addEventListener('load', function() {
     setDocumentHeight();
-    enforceScrollLockAtBottom();
+    updateMaxScrollLimit();
+    clampVerticalScroll();
   });
   window.addEventListener('resize', function() {
     setDocumentHeight();
-    enforceScrollLockAtBottom();
+    updateMaxScrollLimit();
+    clampVerticalScroll();
   });
-  window.addEventListener('scroll', enforceScrollLockAtBottom, { passive: true });
+  window.addEventListener('scroll', clampVerticalScroll, { passive: true });
   
   // Also set height after a short delay to ensure all content is loaded
   setTimeout(function() {
     setDocumentHeight();
-    enforceScrollLockAtBottom();
+    updateMaxScrollLimit();
+    clampVerticalScroll();
   }, 100);
 </script>
 
