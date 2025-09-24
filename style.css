@@ -481,13 +481,13 @@ img {
 .bottomBar{
   width: 100%;
   background-color: black;
-  padding: 110px 110px;
+  padding: 110px 200px;
   color: white;
   display: flex;
   position: relative;  
   margin-top: 100px;
   overflow: hidden;
-  bottom: 50px;
+  bottom: 100px;
 }
 
 .bottomBar a{
