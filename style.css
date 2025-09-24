@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   height: 90%;
+  max-height: 90%;
 }
 
 html, body {
@@ -20,6 +21,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   height: 90%;
+  max-height: 90%;
 }
 
 html {
