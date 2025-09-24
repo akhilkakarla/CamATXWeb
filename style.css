@@ -707,14 +707,13 @@ h2 {
 }
 
 
-@media screen and (width < 1600) and (width > 1800){
+@media screen and (width < 767) and (width > 320) and (width < 1023) and (width > 768) and (width > 1024) and (width < 1727){
   .scroll-wrapper{
       overflow-x: scroll;
   }
 
   body, html{
     width: 1728px;
-    max-width: 1728px;
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
