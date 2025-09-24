@@ -463,8 +463,8 @@ img {
   color: #ffff;
   background-color: #3E1E68;
   position: relative;
-  margin-top: 200px;
-  padding: 5px 50px;
+  margin-top: 300px;
+  padding: 10px 100px;
   text-decoration: none;
   overflow: hidden;
 }
@@ -474,6 +474,8 @@ img {
   text-decoration: none;
   position: relative;
   left: 700px;
+  align-items: center;
+  justify-content: center;
 }
 
 .bottomBar{
