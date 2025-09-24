@@ -678,6 +678,10 @@ img {
   transform: translateY(0); 
 }
 
+.info{
+  margin-top: 50px;
+}
+
 /*
 .remove-whitespace{
   background-color: #ffff;
