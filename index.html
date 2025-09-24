@@ -691,6 +691,7 @@
       transform: translateY(0); 
     }
 
+    /*
     .remove-whitespace{
       background-color: #ffff;
       height: 0;
@@ -706,6 +707,7 @@
       padding: 0 !important;
       line-height: 0 !important;
     }
+    */
 
     h2 {
       margin-top: 0;
@@ -868,12 +870,41 @@
     }
   }
 
+  // Helper: determine if bottomBar is fully visible in viewport
+  function isBottomBarFullyVisible() {
+    const bottomBar = document.getElementById('bottomBar');
+    if (!bottomBar) return false;
+    const rect = bottomBar.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+  }
+
+  // Toggle vertical scroll based on bottomBar visibility
+  function enforceScrollLockAtBottom() {
+    if (isBottomBarFullyVisible()) {
+      document.documentElement.style.overflowY = 'hidden';
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.documentElement.style.overflowY = '';
+      document.body.style.overflowY = '';
+    }
+  }
+
   // Set height on page load and resize
-  window.addEventListener('load', setDocumentHeight);
-  window.addEventListener('resize', setDocumentHeight);
+  window.addEventListener('load', function() {
+    setDocumentHeight();
+    enforceScrollLockAtBottom();
+  });
+  window.addEventListener('resize', function() {
+    setDocumentHeight();
+    enforceScrollLockAtBottom();
+  });
+  window.addEventListener('scroll', enforceScrollLockAtBottom, { passive: true });
   
   // Also set height after a short delay to ensure all content is loaded
-  setTimeout(setDocumentHeight, 100);
+  setTimeout(function() {
+    setDocumentHeight();
+    enforceScrollLockAtBottom();
+  }, 100);
 </script>
 
 
@@ -1066,8 +1097,10 @@
           </div>
         </section>
 
+        <!--
         <div class="remove-whitespace">
           <p></p>
         </div>
+        -->
 </body>
 </html>
