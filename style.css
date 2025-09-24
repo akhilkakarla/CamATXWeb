@@ -11,13 +11,17 @@ body {
 }
 
 html, body {
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   display: block;
-  width: auto;
-  height: auto;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -147,23 +151,19 @@ footer a:hover {
 }
 
 .screenshot-row {
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
-  width: 100vw;
+  width: 100%;
   background-color: #3E1E68;
   color: #FFFF;
   display: flex;
   gap: 16px;
   scroll-snap-type: x mandatory;
-  width: 100%;
-  padding: 60px 60px;
-  transform: translateX(-87px);
+  padding: 40px 20px;
   margin-top: 50px;
   position: relative;
-  top: -950px;
-  /*transform: translateY(-100px);*/
 }
 
 .screenshot {
@@ -258,18 +258,18 @@ footer a:hover {
 .tagline1{
   color: black;
   font-size: 55px;
-  position: relative;
-  top: -1347px;
-  left: 885px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 20px;
   text-decoration: bold;
 }
 
 .tagline2{
   color: black;
   font-size: 20px;
-  position: relative;
-  top: -1347px;
-  left: 885px;
+  text-align: center;
+  margin: 10px auto;
+  padding: 0 20px;
 }
 
 /*
@@ -596,12 +596,12 @@ img {
 }
 
 .centered {
-  width: 1900px;
-  margin-left: 85px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
   border-radius: 30px;
-  /*margin-bottom: 100px;*/
   position: relative;
-  bottom: 290px;
+  padding: 0 20px;
 }
 
 .why{
@@ -707,18 +707,185 @@ h2 {
 }
 
 
-@media screen and (width < 1600) and (width > 1800){
-  .scroll-wrapper{
-      overflow-x: scroll;
-  }
+/* Mobile First Responsive Design */
 
-  body, html{
-    width: 1728px;
-    max-width: 1728px;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
+/* Mobile devices (320px and up) */
+@media screen and (max-width: 767px) {
+  .navbar {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+  }
+  
+  .navbar a {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .main-logo {
+    max-width: 80px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .camatx-title {
+    font-size: 30px;
+    margin-left: 10px;
+    text-align: center;
+    position: static;
+  }
+  
+  .download-button {
+    position: static;
+    margin: 20px auto;
     display: block;
+    width: fit-content;
+    font-size: 24px;
+    padding: 15px 40px;
+  }
+  
+  .title-screenshot1, .title-screenshot2 {
+    max-width: 150px;
+    margin: 10px auto;
+    position: static;
+    display: block;
+  }
+  
+  .tagline1 {
+    font-size: 28px;
+    margin: 20px auto;
+  }
+  
+  .tagline2 {
+    font-size: 16px;
+    margin: 10px auto;
+  }
+  
+  .screenshot-row {
+    padding: 20px 10px;
+  }
+  
+  .screenshot {
+    max-width: 150px;
+  }
+  
+  .features-title {
+    font-size: 20px;
+    margin-left: 10px;
+    position: static;
+    text-align: center;
+  }
+  
+  .camera, .ai, .search {
+    position: static;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .bottomBar {
+    padding: 40px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .bottomBar-tagline, .useful-links-title, .privacy-policy, .faq, .app-download, .footer {
+    position: static;
+    margin: 10px 0;
+    left: auto;
+    right: auto;
+  }
+}
+
+/* Tablet devices (768px and up) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar a {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+  
+  .main-logo {
+    max-width: 100px;
+    margin-left: 50px;
+  }
+  
+  .camatx-title {
+    font-size: 40px;
+    margin-left: 50px;
+  }
+  
+  .download-button {
+    font-size: 28px;
+    padding: 18px 50px;
+    position: static;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+  }
+  
+  .title-screenshot1, .title-screenshot2 {
+    max-width: 200px;
+    margin: 20px auto;
+    position: static;
+    display: block;
+  }
+  
+  .tagline1 {
+    font-size: 40px;
+  }
+  
+  .tagline2 {
+    font-size: 18px;
+  }
+  
+  .centered {
+    max-width: 90%;
+    margin: 20px auto;
+  }
+  
+  .bottomBar {
+    padding: 60px 40px;
+  }
+}
+
+/* Desktop devices (1024px and up) */
+@media screen and (min-width: 1024px) {
+  .navbar a {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  
+  .main-logo {
+    max-width: 110px;
+    margin-left: 180px;
+  }
+  
+  .camatx-title {
+    font-size: 50px;
+    margin-left: 310px;
+  }
+  
+  .download-button {
+    font-size: 35px;
+    padding: 20px 70px;
+  }
+  
+  .title-screenshot1, .title-screenshot2 {
+    max-width: 270px;
+  }
+  
+  .tagline1 {
+    font-size: 55px;
+  }
+  
+  .tagline2 {
+    font-size: 20px;
+  }
+  
+  .centered {
+    max-width: 1200px;
+  }
+  
+  .bottomBar {
+    padding: 150px 200px;
   }
 }
 
